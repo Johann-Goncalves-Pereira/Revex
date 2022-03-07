@@ -1,28 +1,30 @@
-# my new project
-> 🌳  built with [elm-spa](https://elm-spa.dev)
+# New Base project **incomplete**
+- Made of:
+  - [https://elm-lang.org](https://elm-lang.org)   
+  - [vite](https://vitejs.dev)
+  - [elm-spa](https://elm-spa.dev)
+  - [sass](https://sass-lang.com)
+  - [postcss](https://postcss.org)
+  
 
 ## dependencies
 
 This project requires the latest LTS version of [Node.js](https://nodejs.org/)
 
 ```bash
-npm install -g elm elm-spa
+npm i
 ```
 
 ## running locally
 
 ```bash
-elm-spa server  # starts this app at http:/localhost:1234
+npm run dev
 ```
 
 ### other commands
 
 ```bash
-elm-spa add    # add a new page to the application
-elm-spa build  # production build
-elm-spa watch  # runs build as you code (without the server)
+npm run dev
+npm run build
+npm run preview
 ```
-
-## learn more
-
-You can learn more at [elm-spa.dev](https://elm-spa.dev)
