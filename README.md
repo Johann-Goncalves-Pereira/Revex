@@ -1,6 +1,6 @@
 # New Base project **incomplete**
 - Made of:
-  - [https://elm-lang.org](https://elm-lang.org)   
+  - [elm](https://elm-lang.org)   
   - [vite](https://vitejs.dev)
   - [elm-spa](https://elm-spa.dev)
   - [sass](https://sass-lang.com)
