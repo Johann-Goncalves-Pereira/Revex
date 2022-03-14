@@ -1,0 +1,20 @@
+@use "../abstracts/" as *;
+
+:root {
+    @include defineColorHSL(--clr-surface-0, 210, 11%, 2.25%);
+    @include defineColorHSL(--clr-surface-1, 210, 11%, 7.25%);
+    @include defineColorHSL(--clr-surface-2, 210, 11%, 15.5%);
+    @include defineColorHSL(--clr-surface-3, 210, 11%, 23.5%);
+
+    --clr-text-0: var(--gray-1);
+    --clr-text-1: var(--gray-3);
+
+    --clr-brand-0: var(--violet-4);
+}
+
+.false-class----------------------------------------colors {
+    --clr-surface-0: hsl(210, 11%, 2.25%);
+    --clr-surface-1: hsl(210, 11%, 7.25%);
+    --clr-surface-2: hsl(210, 11%, 15.5%);
+    --clr-surface-3: hsl(210, 11%, 23.5%);
+}

@@ -1,0 +1,15 @@
+body {
+    color: var(--clr-text-0);
+    background: var(--clr-surface-0);
+}
+
+//! Main div with all the things
+#root {
+    //? Now #root is the new base
+    position: absolute;
+    inset: 0;
+
+    font-family: "Fredoka", spotify-circular, spotify-circular-cyrillic, spotify-circular-arabic,
+        spotify-circular-hebrew, "Helvetica Neue", helvetica, arial, "Hiragino Kaku Gothic Pro", Meiryo, "MS Gothic",
+        sans-serif;
+}
