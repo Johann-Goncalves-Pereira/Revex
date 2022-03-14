@@ -12,7 +12,6 @@ import Url exposing (Url)
 import View
 
 
-
 main : Program Shared.Flags Model Msg
 main =
     Browser.application

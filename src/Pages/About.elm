@@ -1,13 +1,9 @@
-module Pages.Home_ exposing (Model, Msg, page)
+module Pages.About exposing (Model, Msg, page)
 
-import Gen.Params.Home_ exposing (Params)
-import Gen.Route as Route exposing (Route)
-import Html exposing (Html, div, p, text)
-import Html.Attributes exposing (attribute, class, id, src, style)
+import Gen.Params.About exposing (Params)
 import Page
 import Request
 import Shared
-import UI exposing (defaultConfig)
 import View exposing (View)
 
 
@@ -54,12 +50,4 @@ update msg model =
 
 view : Model -> View Msg
 view model =
-    { title = "Johann - Home"
-    , body =
-        UI.layout
-            { defaultConfig
-                | route = Route.Home_
-                , mainTagContent =
-                    [ p [] [ text "test" ] ]
-            }
-    }
+    View.placeholder "About"
