@@ -73,5 +73,4 @@ viewPlaceholder =
     section [ class "bg-surface-2 p-4 rounded-xl", ariaLabelledby "placeholder" ]
         [ h1 [ class "text-center text-2xl", id "placeholder" ] [ text "Base Project" ]
         , h2 [ class "text-center opacity-60 text-xs" ] [ text "Start a Project with this feature integrated" ]
-
         ]

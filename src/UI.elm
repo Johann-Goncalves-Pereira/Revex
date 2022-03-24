@@ -93,7 +93,6 @@ viewLink : Link -> Html msg
 viewLink model =
     a
         [ href <| Route.toHref model.routeStatic
-        , class "hover:underline p-4"
         , class "main-header__links"
         , classList
             [ ( "main-header__links--current-page"
