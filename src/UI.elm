@@ -1,20 +1,19 @@
-module UI exposing (UIConfig, defaultConfig, layout)
+module UI exposing (PageModel, layout, pageConfig)
 
 import Gen.Route as Route exposing (Route)
 import Html exposing (Attribute, Html, a, div, header, main_, nav, text)
-import Html.Attributes exposing (attribute, class, classList, href, id)
+import Html.Attributes exposing (class, classList, href, id)
+import Regex
 
 
 
 -- Model
 
 
-type alias UIConfig msg =
+type alias PageModel msg =
     { route : Route
-    , pageMainColor : Maybe Int
-    , mousePos : Maybe { posX : Float, posY : Float }
-    , mainTagContent : List (Html msg)
-    , mainTagAttrs : List (Attribute msg)
+    , mainContent : List (Html msg)
+    , mainAttrs : List (Attribute msg)
     }
 
 
@@ -26,13 +25,11 @@ type alias Link =
     }
 
 
-defaultConfig : UIConfig msg
-defaultConfig =
+pageConfig : PageModel msg
+pageConfig =
     { route = Route.Home_
-    , pageMainColor = Nothing
-    , mousePos = Nothing
-    , mainTagContent = []
-    , mainTagAttrs = []
+    , mainContent = []
+    , mainAttrs = []
     }
 
 
@@ -72,6 +69,22 @@ caseNamePage route =
             "Not Found"
 
 
+userReplace : String -> (Regex.Match -> String) -> String -> String
+userReplace userRegex replacer string =
+    case Regex.fromString userRegex of
+        Nothing ->
+            string
+
+        Just regex ->
+            Regex.replace regex replacer string
+
+
+classBuilder : String -> String
+classBuilder string =
+    userReplace "[ ]" (\_ -> "-") string
+        |> String.toLower
+
+
 
 -- View
 
@@ -80,6 +93,7 @@ viewLink : Link -> Html msg
 viewLink model =
     a
         [ href <| Route.toHref model.routeStatic
+        , class "hover:underline p-4"
         , class "main-header__links"
         , classList
             [ ( "main-header__links--current-page"
@@ -91,50 +105,43 @@ viewLink model =
         [ text model.routeName ]
 
 
-layout : UIConfig msg -> List (Html msg)
+layout : PageModel msg -> List (Html msg)
 layout model =
     let
         mainClass : Attribute msg
         mainClass =
-            class <| "main--" ++ caseNamePage model.route
+            class <| "main--" ++ classBuilder (caseNamePage model.route)
     in
     [ div
         [ id "root"
-        , classList [ ( "scroll", True ), ( "root--" ++ caseNamePage model.route, True ) ]
-        , "--clr-brand: "
-            ++ String.fromInt (Maybe.withDefault 90 model.pageMainColor)
-            |> attribute "style"
+        , classList [ ( "scroll", True ), ( "root--" ++ classBuilder (caseNamePage model.route), True ) ]
         ]
-        [ --
-          case model.mousePos of
-            Just mousePos ->
-                div
-                    [ "--screenMousePosX:"
-                        ++ String.fromFloat mousePos.posX
-                        ++ "--screenMousePosY:"
-                        ++ String.fromFloat mousePos.posY
-                        |> attribute "style"
-                    ]
-                    []
-
-            Nothing ->
-                text ""
-        , header [ class "main-header" ]
-            [ nav [ class "main-header__nav" ]
-                [ viewLink
-                    { defaultLink
-                        | routeName = caseNamePage Route.Home_
-                        , routeStatic = Route.Home_
-                        , routeReceived = model.route
-                    }
-                , viewLink
-                    { defaultLink
-                        | routeName = caseNamePage Route.About
-                        , routeStatic = Route.About
-                        , routeReceived = model.route
-                    }
-                ]
-            ]
-        , main_ (mainClass :: model.mainTagAttrs) model.mainTagContent
+        [ viewHeader model
+        , main_ (mainClass :: model.mainAttrs) model.mainContent
         ]
     ]
+
+
+viewHeader : PageModel msg -> Html msg
+viewHeader model =
+    header [ class "main-header" ]
+        [ viewHeaderLinks model [ Route.Home_, Route.About ]
+            |> nav
+                [ class "main-header__nav"
+                , class "flex justify-center gap-4 text-2xl bg-surface-1"
+                ]
+        ]
+
+
+viewHeaderLinks : PageModel msg -> List Route -> List (Html msg)
+viewHeaderLinks model links =
+    List.map
+        (\staticRoute ->
+            viewLink
+                { defaultLink
+                    | routeName = caseNamePage staticRoute
+                    , routeStatic = staticRoute
+                    , routeReceived = model.route
+                }
+        )
+        links

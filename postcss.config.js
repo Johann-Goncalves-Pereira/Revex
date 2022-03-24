@@ -3,7 +3,12 @@ module.exports = {
     autoprefixer: {},
     doiuse: {},
     cssnano: {
-      preset: "cssnano-preset-default",
+      preset: [
+        "default",
+        {
+          cssDeclarationSorter: false,
+        },
+      ],
     },
     "postcss-color-alpha": {},
     "postcss-custom-media": {},
@@ -15,6 +20,7 @@ module.exports = {
     "postcss-plugin": {},
     "postcss-preset-env": {},
     "postcss-utilities": {},
+    tailwindcss: {},
     "rucksack-css": {},
   },
 };

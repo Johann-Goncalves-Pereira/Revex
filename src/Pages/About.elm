@@ -1,10 +1,14 @@
 module Pages.About exposing (Model, Msg, page)
 
 import Gen.Params.About exposing (Params)
+import Gen.Route as Route
 import Page
 import Request
 import Shared
+import UI exposing (pageConfig)
 import View exposing (View)
+import Html exposing (text)
+import Html.Attributes exposing (class)
 
 
 page : Shared.Model -> Request.With Params -> Page.With Model Msg
@@ -50,4 +54,12 @@ update msg model =
 
 view : Model -> View Msg
 view model =
-    View.placeholder "About"
+    { title = "Johann - Home"
+    , body =
+        UI.layout
+            { pageConfig
+                | route = Route.About
+                , mainAttrs = [ class "grid justify-center items-center" ]
+                , mainContent = [ text "" ]
+            }
+    }
