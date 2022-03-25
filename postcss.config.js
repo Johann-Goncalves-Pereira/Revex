@@ -19,6 +19,7 @@ module.exports = {
     },
     "postcss-plugin": {},
     "postcss-preset-env": {},
+    "postcss-pseudo-class-enter": {},
     "postcss-utilities": {},
     tailwindcss: {},
     "rucksack-css": {},
