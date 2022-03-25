@@ -2,13 +2,14 @@ module Pages.About exposing (Model, Msg, page)
 
 import Gen.Params.About exposing (Params)
 import Gen.Route as Route
+import Html exposing (Html, h1, p, section, text)
+import Html.Attributes exposing (class, id)
+import Html.Attributes.Aria exposing (ariaLabelledby)
 import Page
 import Request
 import Shared
 import UI exposing (pageConfig)
 import View exposing (View)
-import Html exposing (text)
-import Html.Attributes exposing (class)
 
 
 page : Shared.Model -> Request.With Params -> Page.With Model Msg
@@ -59,7 +60,20 @@ view model =
         UI.layout
             { pageConfig
                 | route = Route.About
-                , mainAttrs = [ class "grid justify-center items-center" ]
-                , mainContent = [ text "" ]
+                , mainAttrs = [ class "flex justify-center items-center" ]
+                , mainContent = [ viewPlaceholder ]
             }
     }
+
+
+viewPlaceholder : Html msg
+viewPlaceholder =
+    section [ class "bg-surface-2 p-8 rounded-xl w-1/3", ariaLabelledby "heading" ]
+        [ h1 [ class "font-medium text-xl mb-3", id "heading" ] [ text "About" ]
+        , p [ class "text-sm opacity-70" ]
+            [ text """I'll start with a question, have you someday want to start to 
+                    produce some site? And then you give up because, you don't want 
+                    to remake all the environment? Me too so I make this boilerplate 
+                    to start programing easily."""
+            ]
+        ]
