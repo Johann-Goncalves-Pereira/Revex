@@ -71,7 +71,7 @@ view model =
 viewPlaceholder : List (Html msg)
 viewPlaceholder =
     [ h1
-        [ class "text-center text-3xl"
+        [ class "text-center text-2xl"
         , id "placeholder"
         ]
         [ a
