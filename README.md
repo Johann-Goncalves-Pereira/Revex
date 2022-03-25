@@ -11,6 +11,7 @@
   - [Tailwind](https://tailwindcss.com)
   - [EditorConfig](https://editorconfig.org)
 
+
 ## dependencies
 
 This project requires the latest LTS version of [Node.js](https://nodejs.org/)

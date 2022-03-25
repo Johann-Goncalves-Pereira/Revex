@@ -21,7 +21,7 @@
 			transform: translateX(-50%) translateY(0);
 
 			border-radius: var(--radius-3);
-			border: 2px solid var(--bc, var(--blue-5));
+			border: 2px solid var(--bc, var(--blue-7));
 
 			width: 13rem;
 			padding: 0.5rem 1rem;
@@ -56,10 +56,10 @@
 			--bc: var(--green-5);
 		}
 		&:nth-child(3)::before {
-			--bc: var(--orange-5);
+			--bc: var(--orange-9);
 		}
 		&:nth-child(4)::before {
-			--bc: var(--cyan-5);
+			--bc: var(--cyan-6);
 		}
 		&:nth-child(5)::before {
 			--bc: var(--indigo-5);
@@ -79,12 +79,6 @@
 		&:nth-child(10)::before {
 			--bc: var(--blue-7);
 		}
-
-		&__title {
-			opacity: 0.75;
-			margin-top: 0.75em;
-			font-size: 0.75em;
-		}
 	}
 
 	&__title {
@@ -102,7 +96,7 @@
 		}
 		&::before {
 			--bc: var(--red-5);
-			width: 24rem;
+			width: max-content;
 		}
 	}
 }
