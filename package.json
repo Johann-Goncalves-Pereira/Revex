@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "netlify-cli": "^9.13.5",
     "open-props": "^1.3.9"
   },
   "devDependencies": {
