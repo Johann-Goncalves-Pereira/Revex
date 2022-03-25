@@ -16,10 +16,16 @@ body {
 	grid-template-rows: min-content auto;
 }
 
-:where(a):hover {
+:where(a):enter {
 	text-decoration: underline;
 }
 
 :where(a, button) {
 	cursor: pointer;
+}
+
+:focus,
+:focus-visible,
+:focus-within {
+	outline: 0;
 }

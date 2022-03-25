@@ -2,7 +2,7 @@ module UI exposing (PageModel, layout, pageConfig)
 
 import Gen.Route as Route exposing (Route)
 import Html exposing (Attribute, Html, a, div, header, main_, nav, text)
-import Html.Attributes exposing (class, classList, href, id)
+import Html.Attributes exposing (class, classList, href, id, tabindex)
 import Regex
 
 
@@ -89,22 +89,6 @@ classBuilder string =
 -- View
 
 
-viewLink : Link -> Html msg
-viewLink model =
-    a
-        [ href <| Route.toHref model.routeStatic
-        , class "p-4"
-        , class "main-header__links"
-        , classList
-            [ ( "main-header__links--current-page"
-              , isRoute model.routeReceived model.routeStatic
-              )
-            , ( "main-header__links--margin-left", model.hasMarginLeft )
-            ]
-        ]
-        [ text model.routeName ]
-
-
 layout : PageModel msg -> List (Html msg)
 layout model =
     let
@@ -128,7 +112,7 @@ viewHeader model =
         [ viewHeaderLinks model [ Route.Home_, Route.About ]
             |> nav
                 [ class "main-header__nav"
-                , class "flex justify-center gap-4 text-2xl bg-surface-1"
+                , class "flex justify-center gap-4 text-2xl bg-surface-1 shadow-inner"
                 ]
         ]
 
@@ -145,3 +129,20 @@ viewHeaderLinks model links =
                 }
         )
         links
+
+
+viewLink : Link -> Html msg
+viewLink model =
+    a
+        [ class "p-8 font-semibold"
+        , class "main-header__links"
+        , classList
+            [ ( "main-header__links--current-page"
+              , isRoute model.routeReceived model.routeStatic
+              )
+            , ( "main-header__links--margin-left", model.hasMarginLeft )
+            ]
+        , href <| Route.toHref model.routeStatic
+        , tabindex 1
+        ]
+        [ text model.routeName ]
