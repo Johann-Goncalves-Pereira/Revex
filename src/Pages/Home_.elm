@@ -75,17 +75,17 @@ viewPlaceholder =
         , id "placeholder"
         ]
         [ a
-            [ class "logo-ctnr__title bg-surface-2 px-6 py-3 rounded-xl"
-            , href "#"
+            [ class "logo-ctnr__title bg-surface-2 px-7 py-3 rounded-xl gap-2"
+            , href "https://github.com/Johann-Goncalves-Pereira/Revex"
             , target "_blank"
             , rel "noopener noreferrer"
             , tabindex 1
             , ariaLabel "This template project, to start with all the tools you need faster."
             ]
-            [ SVG.logo SVG.Revex 6, text "Revex" ]
+            [ SVG.logo SVG.Revex 4, text "Revex" ]
         ]
     , section [ class "bg-surface-2 p-8 rounded-xl", ariaLabelledby "placeholder" ]
-        [ div [ class "logo-ctnr flex flex-wrap items-center justify-center gap-8 my-8" ] <|
+        [ div [ class "logo-ctnr flex flex-wrap items-center justify-center gap-8 mb-8" ] <|
             List.map
                 (\{ svg, link, desc, name } ->
                     a
@@ -96,7 +96,7 @@ viewPlaceholder =
                         , rel "noopener noreferrer"
                         , tabindex 2
                         ]
-                        [ svg 6, h5 [ class "logo-ctnr__link__title" ] [ text name ] ]
+                        [ svg 6, h5 [ class "mt-3 text-xs opacity-75" ] [ text name ] ]
                 )
                 [ { svg = SVG.logo SVG.Elm, link = "https://elm-lang.org", desc = "A delightful language for reliable web applications.", name = "Elm" }
                 , { svg = SVG.logo SVG.ElmSpa, link = "https://www.elm-spa.dev", desc = "Automatically generated a single page application for elm.", name = "Elm Spa" }
@@ -106,11 +106,7 @@ viewPlaceholder =
                 , { svg = SVG.logo SVG.Sass, link = "https://sass-lang.com", desc = "Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.", name = "Sass" }
                 , { svg = SVG.logo SVG.Vite, link = "https://vitejs.dev", desc = "Next Generation Frontend Tooling. Base of this project.", name = "Vite" }
                 , { svg = SVG.logo SVG.EsBuild, link = "https://esbuild.github.io", desc = "An extremely fast JavaScript bundler.", name = "EsBuild" }
-                , { svg = SVG.logo SVG.EditorConfig
-                  , link = "https://editorconfig.org"
-                  , desc = "EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs."
-                  , name = "EditorConfig"
-                  }
+                , { svg = SVG.logo SVG.EditorConfig, link = "https://editorconfig.org", desc = "EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.", name = "EditorConfig" }
                 , { svg = SVG.logo SVG.TypeScript, link = "https://www.typescriptlang.org", desc = "TypeScript is JavaScript with syntax for types.", name = "Typescript" }
                 ]
         , h2 [ class "text-center opacity-60 text-xs" ] [ text "Start a Project with these features integrated" ]
