@@ -43,7 +43,7 @@ Production.
 npm run build
 ```
 
-And to check production.
+And to check production. _(need to run build first)_
 ```bash
 npm run preview
 ```
