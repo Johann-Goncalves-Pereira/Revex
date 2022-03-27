@@ -1,5 +1,3 @@
-// import OpenProps from "open-props";
-
 module.exports = {
   plugins: {
     autoprefixer: {},
@@ -21,5 +19,13 @@ module.exports = {
   },
 };
 
-//! Do I Use Config
-// browsers: ["ie >= 8", "> 1%"],
+//* Instructions
+//& DoIUse Config
+// doiuse: { browsers: ["ie >= 8", "> 1%"],}
+
+//& Open-Props Config
+// 'postcss-jit-props': require('open-props'),
+//*  or
+// 'postcss-jit-props': {
+//   files: [require.resolve('open-props/style'),require.resolve('open-props/normalize')],
+// },
