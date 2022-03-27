@@ -98,6 +98,7 @@ layout model =
     in
     [ div
         [ id "root"
+        , class "grid grid-rows-[min-content,auto]"
         , classList [ ( "scroll", True ), ( "root--" ++ classBuilder (caseNamePage model.route), True ) ]
         ]
         [ viewHeader model
