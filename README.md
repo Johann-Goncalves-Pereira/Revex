@@ -1,4 +1,4 @@
-# An Boilerplate to work wit Elm
+# An Boilerplate to work with Elm
 
 
 - features:
@@ -23,8 +23,8 @@
 This project requires the latest LTS version of [Node.js](https://nodejs.org/).
 
 ## Installation
-First make a fork from this repository or press the `Use this template` button 
-and follow the github instructions.
+First, make a fork from this repository or press the `Use this template` button 
+and follow the GitHub instructions.
 
 
 Then go to the folder and run this command to install all the dependencies.
