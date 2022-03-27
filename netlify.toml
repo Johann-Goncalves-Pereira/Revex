@@ -1,6 +1,6 @@
 # example netlify.toml
 [build]
-  command = "elm-spa && vite build"
+  command = "elm-spa gen && vite build"
   functions = "netlify/functions"
   publish = "dist"
 
