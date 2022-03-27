@@ -1,19 +1,9 @@
-.DS_Store
-.elm-spa
-elm-stuff
-node_modules
-dist
-
 # User
 .IDE
-.vscode
 
 # Elm-Spa
 .DS_Store
-.elm-spa
-elm-stuff
-node_modules
-dist
+# .elm-spa
 
 # Logs
 logs
@@ -136,6 +126,7 @@ dist
 
 # elm-package generated files
 elm-stuff
+public/dist
 # elm-repl generated files
 repl-temp-*
 
@@ -151,7 +142,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
 dist
 dist-ssr
 *.local
