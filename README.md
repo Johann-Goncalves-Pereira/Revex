@@ -1,35 +1,49 @@
-# New Base project **incomplete**
-- Made of:
-  - [Elm](https://elm-lang.org)   
-  - [Elm-Spa](https://elm-spa.dev)
-  - [Vite](https://vitejs.dev)
-  - [Sass](https://sass-lang.com)
-  - [PostCss](https://postcss.org)
-  - [EsBuild](https://esbuild.github.io)
-  - [Open-Props](https://open-props.style)
-  - [Open-Props](https://open-props.style)
-  - [Tailwind](https://tailwindcss.com)
-  - [EditorConfig](https://editorconfig.org)
+# An Boilarplate to work wit elm
 
 
-## dependencies
+- features:
+  - Build
+    - [Vite](https://vitejs.dev)
+    - [EsBuild](https://esbuild.github.io)
+  - Code
+    - [Elm](https://elm-lang.org)   
+    - [Elm-Spa](https://elm-spa.dev)
+    - [JavaScript](https://www.typescriptlang.org)
+    - [TypeScript](https://www.typescriptlang.org)
+  - Style
+    - [Sass](https://sass-lang.com)
+    - [PostCss](https://postcss.org)
+    - [Open-Props](https://open-props.style)
+    - [Tailwind](https://tailwindcss.com)
+  - Formatting
+    - [EditorConfig](https://editorconfig.org)
 
-This project requires the latest LTS version of [Node.js](https://nodejs.org/)
+# Run the project
+## Dependencies
+This project requires the latest LTS version of [Node.js](https://nodejs.org/).
 
+## Installation
+First make a fork from this repository or press the `Use this template` button 
+and follow the github instructions.
+
+
+Then go to the folder and run this command to install all the dependencies.
 ```bash
-npm i
+npm install
 ```
 
-## running locally
+# Run Locally
 
+Development.
 ```bash
 npm run dev
 ```
-
-### other commands
-
+Production.
 ```bash
-npm run dev
 npm run build
+```
+
+And to check production.
+```bash
 npm run preview
 ```
