@@ -55,7 +55,7 @@ update msg model =
 
 view : Model -> View Msg
 view model =
-    { title = "Johann - Home"
+    { title = "Revex - About"
     , body =
         UI.layout
             { pageConfig
