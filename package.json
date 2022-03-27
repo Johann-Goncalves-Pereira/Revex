@@ -12,6 +12,7 @@
     "autoprefixer": "^10.4.4",
     "cssnano": "^5.1.5",
     "doiuse": "^4.4.1",
+    "elm": "^0.19.1-5",
     "elm-spa": "^6.0.4",
     "elm-tooling": "^1.7.0",
     "netlify-cli": "^9.13.5",
