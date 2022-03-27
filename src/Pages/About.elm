@@ -68,12 +68,11 @@ view model =
 
 viewPlaceholder : Html msg
 viewPlaceholder =
-    section [ class "bg-surface-2 p-8 rounded-xl w-1/3", ariaLabelledby "heading" ]
+    section [ class "bg-surface-2 p-8 rounded-xl w-[clamp(18rem,28vw,30rem)] md:scale-125", ariaLabelledby "heading" ]
         [ h1 [ class "font-medium text-xl mb-3", id "heading" ] [ text "About" ]
         , p [ class "text-sm opacity-70" ]
-            [ text """I'll start with a question, have you someday want to start to 
-                    produce some site? And then you give up because, you don't want 
-                    to remake all the environment? Me too so I make this boilerplate 
-                    to start programing easily."""
+            [ text """I'll start with a question, have you someday want to start to some site?
+                      And then you give up because, you don't want to remake all the environment?
+                      Me too! So, I made this boilerplate to start prototyping easily."""
             ]
         ]
