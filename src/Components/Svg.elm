@@ -35,11 +35,11 @@ type Logo
     | Revex
 
 
-logo : Logo -> Int -> Html msg
-logo logotype size =
+logo : Logo -> Html msg
+logo logotype =
     let
         h =
-            style <| "height:" ++ String.fromInt size ++ "rem;" ++ "width:" ++ String.fromInt size ++ "rem"
+            class "h-full w-full"
     in
     case logotype of
         Elm ->

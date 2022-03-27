@@ -82,21 +82,21 @@ viewPlaceholder =
             , tabindex 1
             , ariaLabel "This template project, to start with all the tools you need faster."
             ]
-            [ SVG.logo SVG.Revex 4, text "Revex" ]
+            [ SVG.logo SVG.Revex, text "Revex" ]
         ]
-    , section [ class "bg-surface-2 p-8 rounded-xl", ariaLabelledby "placeholder" ]
-        [ div [ class "logo-ctnr flex flex-wrap items-center justify-center gap-8 mb-8" ] <|
+    , section [ class "bg-surface-2 p-4 rounded-xl w-[65vw] mb-8 md:p-8", ariaLabelledby "placeholder" ]
+        [ div [ class "logo-ctnr flex flex-wrap items-center justify-center mb-8 gap-4 md:gap-8" ] <|
             List.map
                 (\{ svg, link, desc, name } ->
                     a
-                        [ class "logo-ctnr__link"
+                        [ class "logo-ctnr__link w-16 md:w-24"
                         , href link
                         , ariaLabel desc
                         , target "_blank"
                         , rel "noopener noreferrer"
                         , tabindex 2
                         ]
-                        [ svg 6, h5 [ class "mt-3 text-xs opacity-75" ] [ text name ] ]
+                        [ svg, h5 [ class "mt-3 text-xs opacity-75" ] [ text name ] ]
                 )
                 [ { svg = SVG.logo SVG.Elm, link = "https://elm-lang.org", desc = "A delightful language for reliable web applications.", name = "Elm" }
                 , { svg = SVG.logo SVG.ElmSpa, link = "https://www.elm-spa.dev", desc = "Automatically generated a single page application for elm.", name = "Elm Spa" }

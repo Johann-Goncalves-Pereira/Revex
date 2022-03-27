@@ -98,7 +98,7 @@ layout model =
     in
     [ div
         [ id "root"
-        , class "grid grid-rows-[min-content,auto]"
+        , class "grid grid-rows-[min-content,auto] gap-8"
         , classList [ ( "scroll", True ), ( "root--" ++ classBuilder (caseNamePage model.route), True ) ]
         ]
         [ viewHeader model
@@ -135,7 +135,7 @@ viewHeaderLinks model links =
 viewLink : Link -> Html msg
 viewLink model =
     a
-        [ class "p-8 font-semibold"
+        [ class "p-4 font-semibold md:p-8"
         , class "main-header__links"
         , classList
             [ ( "main-header__links--current-page"
