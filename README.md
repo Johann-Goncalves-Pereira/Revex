@@ -1,4 +1,4 @@
-# An Boilarplate to work wit Elm
+# An Boilerplate to work wit Elm
 
 
 - features:
