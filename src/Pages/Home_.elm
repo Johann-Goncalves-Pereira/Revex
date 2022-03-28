@@ -89,14 +89,14 @@ viewPlaceholder =
             List.map
                 (\{ svg, link, desc, name } ->
                     a
-                        [ class "logo-ctnr__link w-16 md:w-24"
+                        [ class "logo-ctnr__link grid grid-rows-[auto,max-content] gap-4 h-24 w-16 md:w-24 md:h-28"
                         , href link
                         , ariaLabel desc
                         , target "_blank"
                         , rel "noopener noreferrer"
                         , tabindex 2
                         ]
-                        [ svg, h5 [ class "mt-3 text-xs opacity-75" ] [ text name ] ]
+                        [ svg, h5 [ class "text-xs opacity-75" ] [ text name ] ]
                 )
                 [ { svg = SVG.logo SVG.Elm, link = "https://elm-lang.org", desc = "A delightful language for reliable web applications.", name = "Elm" }
                 , { svg = SVG.logo SVG.ElmSpa, link = "https://www.elm-spa.dev", desc = "Automatically generated a single page application for elm.", name = "Elm Spa" }
