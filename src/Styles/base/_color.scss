@@ -1,13 +1,38 @@
 @use "../abstracts/" as *;
+@use "sass:string";
+
+//? Prevent Hsl to transform in Hex.
+@function hsl($h, $s, $l) {
+	@return unquote("hsl(#{$h}, #{$s}, #{$l})");
+}
+
+//? Color base
+$cb: 0;
+
+$colors: (
+	//& Surface
+	"surface-#{$cb}": hsl(210, 11%, 2%),
+	"surface-#{$cb+1}": hsl(210, 11%, 7%),
+	"surface-#{$cb+2}": hsl(210, 11%, 15%),
+	"surface-#{$cb+3}": hsl(210, 11%, 23%),
+	//& Text
+	"text-#{$cb}": hsl(0, 0%, 95%),
+	"text-#{$cb+1}": hsl(0, 0%, 85%),
+	"text-#{$cb+2}": hsl(0, 0%, 70%),
+	//& Brand -> Start from the middle.
+	"brand-#{$cb+5}": hsl(0, 100%, 71%)
+);
 
 :root {
-	@include defineColorHSL(--clr-surface-0, 210, 11%, 2.25%);
-	@include defineColorHSL(--clr-surface-1, 210, 11%, 7.25%);
-	@include defineColorHSL(--clr-surface-2, 210, 11%, 15.5%);
-	@include defineColorHSL(--clr-surface-3, 210, 11%, 23.5%);
+	@each $p, $v in $colors {
+		--clr-#{$p}: #{$v};
 
-	--clr-text-0: var(--gray-1);
-	--clr-text-1: var(--gray-3);
+		$compose-hls-individuals: string.slice(
+			$string: $v,
+			$start-at: 5,
+			$end-at: -2,
+		);
 
-	--clr-brand-0: var(--violet-4);
+		--clra-#{$p}: #{$compose-hls-individuals};
+	}
 }

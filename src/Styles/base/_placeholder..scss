@@ -48,8 +48,8 @@
 			&::before {
 				content: attr(aria-label);
 
-				--false-to-jit: var(--red-5);
-				--false-to-jit: var(--red-6);
+				--false-to-jit-0: var(--red-5);
+				--false-to-jit-1: var(--red-6);
 			}
 		}
 
