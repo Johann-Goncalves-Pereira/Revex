@@ -6,33 +6,35 @@
 	@return unquote("hsl(#{$h}, #{$s}, #{$l})");
 }
 
-//? Color base
-$cb: 0;
-
 $colors: (
-	//& Surface
-	"surface-#{$cb}": hsl(210, 11%, 2%),
-	"surface-#{$cb+1}": hsl(210, 11%, 7%),
-	"surface-#{$cb+2}": hsl(210, 11%, 15%),
-	"surface-#{$cb+3}": hsl(210, 11%, 23%),
-	//& Text
-	"text-#{$cb}": hsl(0, 0%, 95%),
-	"text-#{$cb+1}": hsl(0, 0%, 85%),
-	"text-#{$cb+2}": hsl(0, 0%, 70%),
-	//& Brand -> Start from the middle.
-	"brand-#{$cb+5}": hsl(0, 100%, 71%)
+	"surface": (
+		"0": hsl(210, 11%, 2%),
+		"1": hsl(210, 11%, 7%),
+		"2": hsl(210, 11%, 15%),
+		"3": hsl(210, 11%, 23%),
+	),
+	"text": (
+		"0": hsl(0, 0%, 95%),
+		"1": hsl(0, 0%, 85%),
+		"3": hsl(0, 0%, 70%),
+	),
+	"brand": (
+		"0": hsl(0, 100%, 71%),
+	),
 );
 
 :root {
-	@each $p, $v in $colors {
-		--clr-#{$p}: #{$v};
+	@each $color, $shades in $colors {
+		@each $shade, $clr in $shades {
+			$break-hsl: string.slice(
+				$string: $clr,
+				$start-at: 5,
+				$end-at: -2,
+			);
 
-		$compose-hls-individuals: string.slice(
-			$string: $v,
-			$start-at: 5,
-			$end-at: -2,
-		);
-
-		--clra-#{$p}: #{$compose-hls-individuals};
+			// @debug $clr, $break-hsl;
+			--clr-#{$color}-#{$shade}: #{$clr};
+			--clra-#{$color}-#{$shade}: #{$break-hsl};
+		}
 	}
 }
