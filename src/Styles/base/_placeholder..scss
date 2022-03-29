@@ -47,6 +47,9 @@
 			}
 			&::before {
 				content: attr(aria-label);
+
+				--false-to-jit: var(--red-5);
+				--false-to-jit: var(--red-6);
 			}
 		}
 
