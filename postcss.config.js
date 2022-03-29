@@ -1,4 +1,4 @@
-module.exports = (env) => ({
+module.exports = {
   plugins: {
     autoprefixer: {},
     doiuse: {},
@@ -17,7 +17,7 @@ module.exports = (env) => ({
     tailwindcss: {},
     "rucksack-css": {},
   },
-});
+};
 
 //* Instructions
 //& DoIUse Config
