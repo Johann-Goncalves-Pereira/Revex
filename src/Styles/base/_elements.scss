@@ -2,7 +2,7 @@
 
 @use "../abstracts/" as *;
 
-body {
+html body {
 	color: var(--clr-text-0);
 	background: var(--clr-surface-0);
 }
