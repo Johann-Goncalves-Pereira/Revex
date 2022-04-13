@@ -29,21 +29,21 @@ and follow the GitHub instructions.
 
 Then go to the folder and run this command to install all the dependencies.
 ```bash
-npm install
+yarn install
 ```
 
 # Run Locally
 
 Development.
 ```bash
-npm run dev
+yarn dev
 ```
 Production.
 ```bash
-npm run build
+yarn build
 ```
 
 And to check production. _(need to run build first)_
 ```bash
-npm run preview
+yarn preview
 ```
