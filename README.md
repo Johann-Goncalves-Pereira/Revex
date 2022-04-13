@@ -28,9 +28,11 @@ and follow the GitHub instructions.
 
 
 Then go to the folder and run this command to install all the dependencies.
+
 ```bash
 yarn install
 ```
+_You can use `npm` if you prefer_
 
 # Run Locally
 
