@@ -99,7 +99,7 @@ layout model =
     in
     [ div
         [ id "root"
-        , placeholderStyles 1
+        , placeholderStyles 0
         , classList [ ( "scroll", True ), ( "root--" ++ classBuilder (caseNamePage model.route), True ) ]
         ]
         [ viewHeader model
@@ -114,7 +114,7 @@ viewHeader model =
         [ viewHeaderLinks model [ Route.Home_, Route.About ]
             |> nav
                 [ class "main-header__nav"
-                , placeholderStyles 2
+                , placeholderStyles 1
                 ]
         ]
 
@@ -137,7 +137,7 @@ viewLink : Link -> Html msg
 viewLink model =
     a
         [ class "main-header__links"
-        , placeholderStyles 3
+        , placeholderStyles 2
         , classList
             [ ( "main-header__links--current-page"
               , isRoute model.routeReceived model.routeStatic
