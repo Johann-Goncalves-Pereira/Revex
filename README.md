@@ -66,11 +66,11 @@ This project has a [Netlify](https://www.netlify.com) base settings. _You can se
 So if you want to follow this path of deploying it. It is super **easy** and **simple**. Just go to Netlify website, make an account or login in.
 Add your `repository` with this template and follow the instructions of Netlify. <br/>
 <p>
- <img  align="left" width="49%"ima src="https://user-images.githubusercontent.com/62612685/163657110-20c17e3a-71c6-46c1-9be9-d598387008a5.png" alt="Netlify Config" />
+ <img  align="left" width="45%"ima src="https://user-images.githubusercontent.com/62612685/163657110-20c17e3a-71c6-46c1-9be9-d598387008a5.png" alt="Netlify Config" />
   <- When you get to this point: <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;Don't change anything if you don't know what are you doing.
   <br/><br/>
  <strong>If you see this logs, your site is up for everyone to see ✨.</strong>
- <img width="49%" src="https://user-images.githubusercontent.com/62612685/163657208-681fc2f0-397b-4cd0-9d3b-cf2c0c5767b9.png" alt="Netlify Config" />
+ <img width="45%" src="https://user-images.githubusercontent.com/62612685/163657208-681fc2f0-397b-4cd0-9d3b-cf2c0c5767b9.png" alt="Netlify Config" />
 </p>
 
