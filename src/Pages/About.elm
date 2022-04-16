@@ -77,25 +77,25 @@ view model =
 
 viewPlaceholder : Model -> Html Msg
 viewPlaceholder model =
-    section [ class "bg-surface-2 p-8 rounded-xl w-[clamp(18rem,28vw,30rem)] md:scale-125", ariaLabelledby "heading" ]
-        [ h1 [ class "font-medium text-xl mb-3", id "heading" ] [ text "About" ]
-        , p [ class "text-sm opacity-70" ]
+    section [ class "bg-surface-2 p-8 rounded-xl w-[min(100vw-3rem,42rem)]", ariaLabelledby "heading" ]
+        [ h1 [ class "text-2xl font-medium mb-3", id "heading" ] [ text "About" ]
+        , p [ class "text-[1.15rem] opacity-70" ]
             [ text """I'll start with a question, have you someday want to start to some site?
                       And then you give up because, you don't want to remake all the environment?
                       Me too! So, I made this boilerplate to start prototyping easily."""
             ]
         , div [ class "relative" ]
-            [ p [ class "absolute left-2 top-1/2 -translate-y-1/2 text-xs text-[#ffffff86] pointer-events-none select-none" ] [ text "Input value: " ]
-            , input [ class "bg-surface-1 p-2 rounded-lg w-full pl-20 border-0 my-5 h-8", onInput ChangeInput, value model.inputValue ] []
+            [ p [ class "absolute left-2 top-1/2 -translate-y-1/2 text-xs text-[#ffffff86] pointer-events-none select-none text-[0.875rem]" ] [ text "Input value: " ]
+            , input [ class "bg-surface-1 p-2 rounded-lg w-full pl-20 border-0 my-5 h-8 text-[0.875rem]", onInput ChangeInput, value model.inputValue ] []
             ]
         , div [ class "grid grid-cols-[max-content,1fr] items-center bg-surface-1 p-2 rounded-lg mb-5 w-full h-8" ]
-            [ em [ class "text-xs text-[#ffffff86] pr-2 pointer-events-none select-none" ] [ text "Inverted value: " ]
-            , p [ class "overflow-hidden" ] [ String.reverse model.inputValue |> text ]
+            [ em [ class "text-xs text-[#ffffff86] pr-2 pointer-events-none select-none text-[0.875rem]" ] [ text "Inverted value: " ]
+            , p [ class "overflow-hidden text-[0.875rem]" ] [ String.reverse model.inputValue |> text ]
             ]
-        , div [ class "flex items-center justify-center gap-5" ]
-            [ button [ class "bg-surface-1 px-6 py-2 rounded-lg", onClick SubtractValue ] [ text "-" ]
+        , div [ class "flex flex-col items-center justify-center gap-5 sm:flex-row" ]
+            [ button [ class "w-full bg-surface-1 px-6 py-2 rounded-lg sm:w-auto", onClick SubtractValue ] [ text "-" ]
             , p [ class "bg-surface-1 px-6 py-2 rounded-lg w-full text-center pointer-events-none select-none cursor-default" ]
                 [ text <| String.fromInt model.intValue ]
-            , button [ class "bg-surface-1 px-6 py-2 rounded-lg", onClick AddValue ] [ text "+" ]
+            , button [ class "w-full bg-surface-1 px-6 py-2 rounded-lg sm:w-auto", onClick AddValue ] [ text "+" ]
             ]
         ]
