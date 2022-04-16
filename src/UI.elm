@@ -1,5 +1,6 @@
 module UI exposing (PageModel, layout, pageConfig)
 
+import Array
 import Gen.Route as Route exposing (Route)
 import Html exposing (Attribute, Html, a, div, header, main_, nav, text)
 import Html.Attributes exposing (class, classList, href, id, tabindex)
@@ -98,7 +99,7 @@ layout model =
     in
     [ div
         [ id "root"
-        , class "grid grid-rows-[min-content,auto] gap-8"
+        , placeholderStyles 1
         , classList [ ( "scroll", True ), ( "root--" ++ classBuilder (caseNamePage model.route), True ) ]
         ]
         [ viewHeader model
@@ -113,7 +114,7 @@ viewHeader model =
         [ viewHeaderLinks model [ Route.Home_, Route.About ]
             |> nav
                 [ class "main-header__nav"
-                , class "flex justify-center gap-4 text-2xl bg-surface-1 shadow-inner"
+                , placeholderStyles 2
                 ]
         ]
 
@@ -135,8 +136,8 @@ viewHeaderLinks model links =
 viewLink : Link -> Html msg
 viewLink model =
     a
-        [ class "p-4 font-semibold md:p-8"
-        , class "main-header__links"
+        [ class "main-header__links"
+        , placeholderStyles 3
         , classList
             [ ( "main-header__links--current-page"
               , isRoute model.routeReceived model.routeStatic
@@ -147,3 +148,24 @@ viewLink model =
         , tabindex 1
         ]
         [ text model.routeName ]
+
+
+placeholderStyles : Int -> Attribute msg
+placeholderStyles index =
+    let
+        listOfStyles : List (Attribute msg)
+        listOfStyles =
+            [ class "grid grid-rows-[min-content,auto] gap-8"
+            , class "flex justify-center gap-4 text-2xl bg-surface-1 shadow-inner"
+            , class "p-4 font-semibold md:p-8"
+            ]
+
+        arrayOfStyles : Array.Array (Attribute msg)
+        arrayOfStyles =
+            Array.fromList listOfStyles
+
+        getStyle : Maybe (Attribute msg)
+        getStyle =
+            Array.get index arrayOfStyles
+    in
+    Maybe.withDefault (class "error") getStyle
