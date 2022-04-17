@@ -23,8 +23,6 @@ time, mark, audio, video;
 	padding: 0;
 	border: 0;
 	font: inherit;
-	// line-height: 100%;
-	color: inherit;
 }
 
 /* Set core body defaults */
@@ -80,7 +78,7 @@ a:not([class]) {
 	opacity: 0.5;
 }
 
-:where(input, textarea, button) {
+:where(button, input, textarea, select) {
 	font: inherit;
 	color: inherit;
 }
