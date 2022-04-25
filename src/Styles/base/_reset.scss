@@ -89,6 +89,7 @@ a:not([class]) {
 	user-select: none;
 }
 :where(a) {
+	color: inherit;
 	text-decoration: none;
 	&:enter {
 		text-decoration: underline;
