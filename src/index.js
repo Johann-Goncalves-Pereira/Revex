@@ -1,7 +1,6 @@
 import { Elm } from "./Main.elm";
 
-//Lazy
+// Import the CSS files
 const styles = import.meta.globEager("./Styles/**/*.scss");
-// import "./Styles/_index.scss";
-
+// Initialize our Elm app
 const app = Elm.Main.init();
