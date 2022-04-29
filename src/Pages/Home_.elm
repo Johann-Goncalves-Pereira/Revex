@@ -3,15 +3,15 @@ module Pages.Home_ exposing (Model, Msg, page)
 import Components.Svg as SVG exposing (Logo(..))
 import Gen.Params.Home_ exposing (Params)
 import Gen.Route as Route
-import Html exposing (Html, a, div, h1, h2, h5, p, section, text)
-import Html.Attributes exposing (alt, attribute, class, href, id, rel, src, style, tabindex, target)
+import Html exposing (Html, a, div, h1, h2, h5, section, text)
+import Html.Attributes exposing (class, href, id, rel, tabindex, target)
 import Html.Attributes.Aria exposing (ariaLabel, ariaLabelledby)
 import Page
 import Request
 import Shared
 import Svg exposing (desc)
 import UI exposing (pageConfig)
-import View exposing (View, placeholder)
+import View exposing (View)
 
 
 page : Shared.Model -> Request.With Params -> Page.With Model Msg
@@ -110,6 +110,9 @@ viewPlaceholder =
                 , { svg = SVG.logo SVG.EditorConfig, link = "https://editorconfig.org", desc = "EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.", name = "EditorConfig" }
                 , { svg = SVG.logo SVG.TypeScript, link = "https://www.typescriptlang.org", desc = "TypeScript is JavaScript with syntax for types.", name = "Typescript" }
                 ]
-        , h2 [ class "text-center opacity-60 text-xs" ] [ text "Start a Project with these features integrated" ]
+        , h2
+            [ class "text-center opacity-60 text-xs"
+            ]
+            [ text "Start a Project with these features integrated" ]
         ]
     ]
