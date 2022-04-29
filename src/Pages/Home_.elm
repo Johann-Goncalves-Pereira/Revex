@@ -98,7 +98,8 @@ viewPlaceholder =
                         ]
                         [ svg, h5 [ class "text-xs opacity-75" ] [ text name ] ]
                 )
-                [ { svg = SVG.logo SVG.Elm, link = "https://elm-lang.org", desc = "A delightful language for reliable web applications.", name = "Elm" }
+                [ --: Svg and Link
+                  { svg = SVG.logo SVG.Elm, link = "https://elm-lang.org", desc = "A delightful language for reliable web applications.", name = "Elm" }
                 , { svg = SVG.logo SVG.ElmSpa, link = "https://www.elm-spa.dev", desc = "Automatically generated a single page application for elm.", name = "Elm Spa" }
                 , { svg = SVG.logo SVG.PostCss, link = "https://postcss.org", desc = "A tool for transforming CSS with JavaScript.", name = "PostCss" }
                 , { svg = SVG.logo SVG.Tailwind, link = "https://tailwindcss.com", desc = "Rapidly build modern websites without ever leaving your HTML.", name = "Tailwind" }
