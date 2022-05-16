@@ -6,10 +6,10 @@ import Html exposing (Html, button, div, em, h1, input, p, section, text)
 import Html.Attributes exposing (class, id, value)
 import Html.Attributes.Aria exposing (ariaLabelledby)
 import Html.Events exposing (onClick, onInput)
+import Layout exposing (initLayout)
 import Page
 import Request
 import Shared
-import UI exposing (pageConfig)
 import View exposing (View)
 
 
@@ -66,8 +66,8 @@ view : Model -> View Msg
 view model =
     { title = "Revex - About"
     , body =
-        UI.layout
-            { pageConfig
+        Layout.viewLayout
+            { initLayout
                 | route = Route.About
                 , mainAttrs = [ class "flex justify-center items-center" ]
                 , mainContent = [ viewPlaceholder model ]

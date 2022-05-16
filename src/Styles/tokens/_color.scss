@@ -34,7 +34,7 @@ $colors: (
 
 			// @debug $clr, $break-hsl;
 			--clr-#{$color}-#{$shade}: #{$clr};
-			--clra-#{$color}-#{$shade}: #{$break-hsl};
+			--clr-#{$color}-#{$shade}-alpha: #{$break-hsl};
 		}
 	}
 }

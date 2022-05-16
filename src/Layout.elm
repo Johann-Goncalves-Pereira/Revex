@@ -1,4 +1,4 @@
-module UI exposing (PageModel, layout, pageConfig)
+module Layout exposing (Model, initLayout, viewLayout)
 
 import Array
 import Gen.Route as Route exposing (Route)
@@ -11,7 +11,7 @@ import Regex
 -- Model
 
 
-type alias PageModel msg =
+type alias Model msg =
     { route : Route
     , mainContent : List (Html msg)
     , mainAttrs : List (Attribute msg)
@@ -26,8 +26,8 @@ type alias Link =
     }
 
 
-pageConfig : PageModel msg
-pageConfig =
+initLayout : Model msg
+initLayout =
     { route = Route.Home_
     , mainContent = []
     , mainAttrs = []
@@ -90,8 +90,8 @@ classBuilder string =
 -- View
 
 
-layout : PageModel msg -> List (Html msg)
-layout model =
+viewLayout : Model msg -> List (Html msg)
+viewLayout model =
     let
         mainClass : Attribute msg
         mainClass =
@@ -108,7 +108,7 @@ layout model =
     ]
 
 
-viewHeader : PageModel msg -> Html msg
+viewHeader : Model msg -> Html msg
 viewHeader model =
     header [ class "main-header" ]
         [ viewHeaderLinks model [ Route.Home_, Route.About ]
@@ -119,7 +119,7 @@ viewHeader model =
         ]
 
 
-viewHeaderLinks : PageModel msg -> List Route -> List (Html msg)
+viewHeaderLinks : Model msg -> List Route -> List (Html msg)
 viewHeaderLinks model links =
     List.map
         (\staticRoute ->

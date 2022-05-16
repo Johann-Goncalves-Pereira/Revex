@@ -6,11 +6,11 @@ import Gen.Route as Route
 import Html exposing (Html, a, div, h1, h2, h5, section, text)
 import Html.Attributes exposing (class, href, id, rel, tabindex, target)
 import Html.Attributes.Aria exposing (ariaLabel, ariaLabelledby)
+import Layout exposing (initLayout)
 import Page
 import Request
 import Shared
 import Svg exposing (desc)
-import UI exposing (pageConfig)
 import View exposing (View)
 
 
@@ -59,8 +59,8 @@ view : Model -> View Msg
 view model =
     { title = "Revex - Home"
     , body =
-        UI.layout
-            { pageConfig
+        Layout.viewLayout
+            { initLayout
                 | route = Route.Home_
                 , mainAttrs = [ class "flex flex-col gap-8 justify-center items-center" ]
                 , mainContent = viewPlaceholder
