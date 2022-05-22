@@ -57,17 +57,27 @@ isRoute route compare =
             False
 
 
-caseNamePage : Route -> String
-caseNamePage route =
-    case route of
-        Route.Home_ ->
-            "Home"
+routeName : Route -> String
+routeName route =
+    let
+        strRoute : String
+        strRoute =
+            Route.toHref route
 
-        Route.About ->
-            "About"
+        getLength =
+            String.length strRoute
 
-        Route.NotFound ->
-            "Not Found"
+        getFirstCharacter =
+            String.dropRight (getLength - 2) strRoute
+                |> String.toUpper
+                |> String.dropLeft 1
+    in
+    if route == Route.Home_ then
+        "Home"
+
+    else
+        getFirstCharacter
+            ++ String.replace "/" " - " (String.dropLeft 2 strRoute)
 
 
 userReplace : String -> (Regex.Match -> String) -> String -> String
@@ -95,12 +105,12 @@ viewLayout model =
     let
         mainClass : Attribute msg
         mainClass =
-            class <| "main--" ++ classBuilder (caseNamePage model.route)
+            class <| "main--" ++ classBuilder (routeName model.route)
     in
     [ div
         [ id "root"
         , placeholderStyles 0
-        , classList [ ( "scroll", True ), ( "root--" ++ classBuilder (caseNamePage model.route), True ) ]
+        , classList [ ( "scroll", True ), ( "root--" ++ classBuilder (routeName model.route), True ) ]
         ]
         [ viewHeader model
         , main_ (mainClass :: model.mainAttrs) model.mainContent
@@ -125,7 +135,7 @@ viewHeaderLinks model links =
         (\staticRoute ->
             viewLink
                 { defaultLink
-                    | routeName = caseNamePage staticRoute
+                    | routeName = routeName staticRoute
                     , routeStatic = staticRoute
                     , routeReceived = model.route
                 }
