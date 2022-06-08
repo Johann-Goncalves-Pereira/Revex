@@ -105,7 +105,7 @@ viewLayout model =
     let
         mainClass : Attribute msg
         mainClass =
-            class <| "main--" ++ classBuilder (routeName model.route)
+            class <| "root__main main--" ++ classBuilder (routeName model.route)
     in
     [ div
         [ id "root"
@@ -120,10 +120,10 @@ viewLayout model =
 
 viewHeader : Model msg -> Html msg
 viewHeader model =
-    header [ class "main-header" ]
+    header [ class "root__header" ]
         [ viewHeaderLinks model [ Route.Home_, Route.About ]
             |> nav
-                [ class "main-header__nav"
+                [ class "root__header__nav"
                 , placeholderStyles 1
                 ]
         ]
@@ -146,13 +146,13 @@ viewHeaderLinks model links =
 viewLink : Link -> Html msg
 viewLink model =
     a
-        [ class "main-header__links"
+        [ class "root__header__links"
         , placeholderStyles 2
         , classList
-            [ ( "main-header__links--current-page"
+            [ ( "root__header__links--current-page"
               , isRoute model.routeReceived model.routeStatic
               )
-            , ( "main-header__links--margin-left", model.hasMarginLeft )
+            , ( "root__header__links--margin-left", model.hasMarginLeft )
             ]
         , href <| Route.toHref model.routeStatic
         , tabindex 1
