@@ -7,7 +7,7 @@ $media: (
 	3xl: 1920px,
 );
 
-@mixin md($breakpoint) {
+@mixin media($breakpoint) {
 	@each $breakpoints, $size in $media {
 		@if $breakpoint==$breakpoints {
 			@media screen and (min-width: $size) {
