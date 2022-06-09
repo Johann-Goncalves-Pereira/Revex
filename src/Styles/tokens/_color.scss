@@ -26,15 +26,14 @@ $colors: (
 :root {
 	@each $color, $shades in $colors {
 		@each $shade, $clr in $shades {
-			$break-hsl: string.slice(
-				$string: $clr,
-				$start-at: 5,
-				$end-at: -2,
-			);
+			$break-hsl: string.slice($clr, 5, -2);
+			$clean-hsl: str-replace($break-hsl, ",", "");
+
+			// @debug $clean-hsl;
 
 			// @debug $clr, $break-hsl;
 			--clr-#{$color}-#{$shade}: #{$clr};
-			--clr-#{$color}-#{$shade}-alpha: #{$break-hsl};
+			--clr-#{$color}-#{$shade}-hsl: #{$clean-hsl};
 		}
 	}
 }
