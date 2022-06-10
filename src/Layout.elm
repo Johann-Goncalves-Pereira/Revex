@@ -22,7 +22,6 @@ type alias Link =
     { routeStatic : Route
     , routeReceived : Route
     , routeName : String
-    , hasMarginLeft : Bool
     }
 
 
@@ -39,7 +38,6 @@ defaultLink =
     { routeStatic = Route.Home_
     , routeReceived = Route.Home_
     , routeName = ""
-    , hasMarginLeft = False
     }
 
 
@@ -146,13 +144,12 @@ viewHeaderLinks model links =
 viewLink : Link -> Html msg
 viewLink model =
     a
-        [ class "root__header__links"
-        , placeholderStyles 2
+        [ placeholderStyles 2
         , classList
-            [ ( "root__header__links--current-page"
+            [ ( "root__header__links", True )
+            , ( "root__header__links--current-page"
               , isRoute model.routeReceived model.routeStatic
               )
-            , ( "root__header__links--margin-left", model.hasMarginLeft )
             ]
         , href <| Route.toHref model.routeStatic
         , tabindex 1
