@@ -108,7 +108,10 @@ viewLayout model =
     [ div
         [ id "root"
         , placeholderStyles 0
-        , classList [ ( "scroll", True ), ( "root--" ++ classBuilder (routeName model.route), True ) ]
+        , classList
+            [ ( "root", True )
+            , ( "root--" ++ classBuilder (routeName model.route), True )
+            ]
         ]
         [ viewHeader model
         , main_ (mainClass :: model.mainAttrs) model.mainContent
