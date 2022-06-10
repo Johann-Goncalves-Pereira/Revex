@@ -77,7 +77,7 @@ view model =
 
 viewPlaceholder : Model -> Html Msg
 viewPlaceholder model =
-    section [ class "bg-surface-2 p-8 rounded-xl w-[min(100vw-3rem,42rem)]", ariaLabelledby "heading" ]
+    section [ class "bg-surface-2 p-8 rounded-xl w-[min(100vw_-_3rem,42rem)]", ariaLabelledby "heading" ]
         [ h1 [ class "text-2xl font-medium mb-3", id "heading" ] [ text "About" ]
         , p [ class "text-[1.15rem] opacity-70" ]
             [ text """I'll start with a question, have you someday want to start to some site?

@@ -84,7 +84,7 @@ viewPlaceholder =
             ]
             [ SVG.logo SVG.Revex, text "Revex" ]
         ]
-    , section [ class "bg-surface-2 p-4 rounded-xl w-[min(70rem,100vw-4rem)] mb-8 md:p-8", ariaLabelledby "placeholder" ]
+    , section [ class "bg-surface-2 p-4 rounded-xl w-[min(70rem,100vw_-_4rem)] mb-8 md:p-8", ariaLabelledby "placeholder" ]
         [ div [ class "logo-ctnr flex flex-wrap items-center justify-center mb-8 gap-4 md:gap-8" ] <|
             List.map
                 (\{ svg, link, desc, name } ->
