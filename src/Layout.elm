@@ -165,7 +165,7 @@ placeholderStyles index =
     let
         listOfStyles : List (Attribute msg)
         listOfStyles =
-            [ class "grid grid-rows-[min-content,auto] gap-8"
+            [ class "grid grid-rows-[auto,1fr] gap-8 h-full"
             , class "flex justify-center gap-4 text-2xl bg-surface-1 shadow-inner"
             , class "p-4 font-semibold md:p-8"
             ]
