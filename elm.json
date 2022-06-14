@@ -16,6 +16,7 @@
             "elm/svg": "1.0.1",
             "elm/url": "1.0.0",
             "fapian/elm-html-aria": "1.4.0",
+            "hmsk/elm-vite-plugin-helper": "1.0.1",
             "ryannhg/elm-spa": "6.0.0"
         },
         "indirect": {
