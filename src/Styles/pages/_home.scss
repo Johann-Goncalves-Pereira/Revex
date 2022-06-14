@@ -4,6 +4,7 @@
 		$space-size: 1rem;
 
 		position: relative;
+		
 		text-decoration: none;
 		text-align: center;
 
@@ -91,10 +92,6 @@
 
 		margin: auto;
 
-		// transition-duration: 100ms;
-
-		&:enter {
-		}
 		&::before {
 			--bc: var(--red-5);
 			width: max-content;
