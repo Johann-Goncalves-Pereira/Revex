@@ -1,7 +1,3 @@
-//? Here is I use to make the base elements of the page;
-
-@use "../abstracts/" as *;
-
 body {
 	color: var(--clr-text-0);
 	background-color: var(--clr-surface-0);
@@ -12,5 +8,7 @@ body {
 		sans-serif;
 }
 
+/* 
 .root {
 }
+ */
