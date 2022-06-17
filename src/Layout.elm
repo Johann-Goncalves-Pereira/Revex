@@ -147,13 +147,13 @@ viewHeaderLinks model links =
 viewLink : Link -> Html msg
 viewLink model =
     a
-        [ placeholderStyles 2
-        , classList
+        [ classList
             [ ( "root__header__links", True )
             , ( "root__header__links--current-page"
               , isRoute model.routeReceived model.routeStatic
               )
             ]
+        , placeholderStyles 2
         , href <| Route.toHref model.routeStatic
         , tabindex 1
         ]
