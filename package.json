@@ -25,6 +25,7 @@
     "postcss-plugin": "^1.0.0",
     "postcss-pseudo-class-enter": "^5.0.0",
     "postcss-utilities": "^0.8.4",
+    "postcss-will-change": "^4.0.1",
     "rucksack-css": "^1.0.2",
     "sass": "^1.52.3",
     "tailwindcss": "^3.1.0",
