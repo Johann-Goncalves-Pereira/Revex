@@ -20,6 +20,7 @@ module.exports = {
     "postcss-plugin": {},
     "postcss-pseudo-class-enter": {},
     "postcss-utilities": {},
+    "postcss-will-change": {},
     tailwindcss: {},
     "rucksack-css": {},
   },
