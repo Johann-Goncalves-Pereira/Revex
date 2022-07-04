@@ -1,0 +1,11 @@
+:root {
+	//? @link https://utopia.fyi/type/calculator?c=320,21,1.067,1140,24,1.5,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
+	--fsf-00: clamp(0.67rem, 1.34rem - 0.95vw, 1.15rem);
+	--fsf-01: clamp(1rem, 1.32rem - 0.45vw, 1.23rem);
+	--fsf-02: clamp(1.31rem, 1.24rem + 0.37vw, 1.5rem);
+	--fsf-03: clamp(1.4rem, 1.07rem + 1.66vw, 2.25rem);
+	--fsf-04: clamp(1.49rem, 0.76rem + 3.67vw, 3.38rem);
+	--fsf-05: clamp(1.59rem, 0.24rem + 6.77vw, 5.06rem);
+	--fsf-06: clamp(1.7rem, -0.6rem + 11.5vw, 7.59rem);
+	--fsf-07: clamp(1.82rem, -1.92rem + 18.68vw, 11.39rem);
+}
