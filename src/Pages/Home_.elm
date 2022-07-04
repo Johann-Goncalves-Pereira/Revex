@@ -79,13 +79,17 @@ viewPlaceholder =
             , href "https://github.com/Johann-Goncalves-Pereira/Revex"
             , target "_blank"
             , rel "noopener noreferrer"
-            , tabindex 1
+            , tabindex 0
             , ariaLabel "This template project, to start with all the tools you need faster."
             ]
             [ SVG.logo SVG.Revex, text "Revex" ]
         ]
     , section [ class "bg-surface-2 p-4 rounded-xl w-[min(70rem,100vw_-_4rem)] mb-8 md:p-8", ariaLabelledby "placeholder" ]
-        [ div [ class "logo-ctnr flex flex-wrap items-center justify-center mb-8 gap-4 md:gap-8" ] <|
+        [ h2
+            [ class "text-center opacity-60 text-xs"
+            ]
+            [ text "Start a Project with these features integrated" ]
+        , div [ class "logo-ctnr flex flex-wrap items-center justify-center mt-8 gap-4 md:gap-8" ] <|
             List.map
                 (\{ svg, link, desc, name } ->
                     a
@@ -94,7 +98,7 @@ viewPlaceholder =
                         , ariaLabel desc
                         , target "_blank"
                         , rel "noopener noreferrer"
-                        , tabindex 2
+                        , tabindex 0
                         ]
                         [ svg, h5 [ class "text-xs opacity-75" ] [ text name ] ]
                 )
@@ -110,9 +114,5 @@ viewPlaceholder =
                 , { svg = SVG.logo SVG.EditorConfig, link = "https://editorconfig.org", desc = "EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.", name = "EditorConfig" }
                 , { svg = SVG.logo SVG.TypeScript, link = "https://www.typescriptlang.org", desc = "TypeScript is JavaScript with syntax for types.", name = "Typescript" }
                 ]
-        , h2
-            [ class "text-center opacity-60 text-xs"
-            ]
-            [ text "Start a Project with these features integrated" ]
         ]
     ]

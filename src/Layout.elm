@@ -155,7 +155,7 @@ viewLink model =
             ]
         , placeholderStyles 2
         , href <| Route.toHref model.routeStatic
-        , tabindex 1
+        , tabindex 0
         ]
         [ text model.routeName ]
 
