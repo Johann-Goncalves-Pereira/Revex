@@ -29,10 +29,7 @@ time, mark, audio, video;
 :where(html) {
 	height: 100%;
 
-	/* Set core root defaults */
-	&:focus-within {
-		scroll-behavior: smooth;
-	}
+	scroll-behavior: smooth;
 }
 :where(body) {
 	height: Max(100vh, 100%);
@@ -69,8 +66,12 @@ a:not([class]) {
 }
 
 //& Personal
+:where(:focus-visible) {
+	outline: 2px dashed currentColor;
+}
+
 :where(:focus) {
-	outline: 0;
+	outline: none;
 }
 
 :where(::placeholder) {
