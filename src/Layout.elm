@@ -166,7 +166,7 @@ placeholderStyles index =
         listOfStyles : List (Attribute msg)
         listOfStyles =
             [ class "grid grid-rows-[auto,1fr] gap-8 h-full"
-            , class "flex justify-center gap-4 text-2xl bg-surface-1 shadow-inner"
+            , class "flex justify-center gap-4 text-2 bg-surface-1 shadow-inner"
             , class "p-4 font-semibold md:p-8"
             ]
 

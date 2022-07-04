@@ -17,13 +17,13 @@ module.exports = {
     },
     fontSize: {
       00: "var(--fsf-00)",
-      10: "var(--fsf-10)",
-      20: "var(--fsf-20)",
-      30: "var(--fsf-30)",
-      40: "var(--fsf-40)",
-      50: "var(--fsf-50)",
-      60: "var(--fsf-60)",
-      70: "var(--fsf-70)",
+      01: "var(--fsf-01)",
+      02: "var(--fsf-02)",
+      03: "var(--fsf-03)",
+      04: "var(--fsf-04)",
+      05: "var(--fsf-05)",
+      06: "var(--fsf-06)",
+      07: "var(--fsf-07)",
     },
     fontWeight: {
       100: 100,
@@ -37,7 +37,7 @@ module.exports = {
       800: 800,
       900: 900,
     },
-    
+
     // extend: {},
   },
   plugins: [],

@@ -71,7 +71,7 @@ view model =
 viewPlaceholder : List (Html msg)
 viewPlaceholder =
     [ h1
-        [ class "text-center text-2xl"
+        [ class "text-center text-2"
         , id "placeholder"
         ]
         [ a
@@ -86,7 +86,7 @@ viewPlaceholder =
         ]
     , section [ class "bg-surface-2 p-4 rounded-xl w-[min(70rem,100vw_-_4rem)] mb-8 md:p-8", ariaLabelledby "placeholder" ]
         [ h2
-            [ class "text-center opacity-60 text-xs"
+            [ class "text-center opacity-60 text-1"
             ]
             [ text "Start a Project with these features integrated" ]
         , div [ class "logo-ctnr flex flex-wrap items-center justify-center mt-8 gap-4 md:gap-8" ] <|
@@ -100,7 +100,7 @@ viewPlaceholder =
                         , rel "noopener noreferrer"
                         , tabindex 0
                         ]
-                        [ svg, h5 [ class "text-xs opacity-75" ] [ text name ] ]
+                        [ svg, h5 [ class "text-1 opacity-75" ] [ text name ] ]
                 )
                 [ --: Svg and Link
                   { svg = SVG.logo SVG.Elm, link = "https://elm-lang.org", desc = "A delightful language for reliable web applications.", name = "Elm" }
