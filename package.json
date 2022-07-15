@@ -4,7 +4,7 @@
   "version": "0.2.7",
   "scripts": {
     "dev": "elm-spa gen && vite",
-    "build": "NODE_ENV=production elm-spa gen && tsc && vite build",
+    "build": "elm-spa gen && tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
