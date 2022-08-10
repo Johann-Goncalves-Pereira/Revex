@@ -75,7 +75,7 @@ viewPlaceholder =
         , id "placeholder"
         ]
         [ a
-            [ class "logo-ctnr__title bg-surface-2 px-7 py-3 rounded-xl gap-2"
+            [ class "logo-ctnr__title bg-surface-200 px-7 py-3 rounded-xl gap-2"
             , href "https://github.com/Johann-Goncalves-Pereira/Revex"
             , target "_blank"
             , rel "noopener noreferrer"
@@ -84,7 +84,7 @@ viewPlaceholder =
             ]
             [ SVG.logo SVG.Revex, text "Revex" ]
         ]
-    , section [ class "bg-surface-2 p-4 rounded-xl w-[min(70rem,100vw_-_4rem)] mb-8 md:p-8", ariaLabelledby "placeholder" ]
+    , section [ class "bg-surface-200 p-4 rounded-xl w-[min(70rem,100vw_-_4rem)] mb-8 md:p-8", ariaLabelledby "placeholder" ]
         [ h2
             [ class "text-center opacity-60 text-1"
             ]

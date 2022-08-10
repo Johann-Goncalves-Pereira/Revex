@@ -4,16 +4,17 @@ module.exports = {
   theme: {
     colors: {
       //& Surface
-      "surface-0": "hsla(var(--clr-surface-0-hsl) / <alpha-value>)",
-      "surface-1": "hsla(var(--clr-surface-1-hsl) / <alpha-value>)",
-      "surface-2": "hsla(var(--clr-surface-2-hsl) / <alpha-value>)",
-      "surface-3": "hsla(var(--clr-surface-3-hsl) / <alpha-value>)",
-      // & Text
-      "text-0": "hsla(var(--clr-text-0-hsl) / <alpha-value>)",
-      "text-1": "hsla(var(--clr-text-1-hsl) / <alpha-value>)",
-      "text-2": "hsla(var(--clr-text-2-hsl) / <alpha-value>)",
+      "surface-100": "hsl(var(--clr-surface-100) / <alpha-value>)",
+      "surface-200": "hsl(var(--clr-surface-200) / <alpha-value>)",
+      "surface-300": "hsl(var(--clr-surface-300) / <alpha-value>)",
+      "surface-400": "hsl(var(--clr-surface-400) / <alpha-value>)",
+      "surface-500": "hsl(var(--clr-surface-500) / <alpha-value>)",
+      "surface-600": "hsl(var(--clr-surface-600) / <alpha-value>)",
+      "surface-700": "hsl(var(--clr-surface-700) / <alpha-value>)",
+      "surface-800": "hsl(var(--clr-surface-800) / <alpha-value>)",
+      "surface-900": "hsl(var(--clr-surface-900) / <alpha-value>)",
       // & Brand
-      "brand-0": "hsla(var(--clr-brand-0-hsl) / <alpha-value>)",
+      "brand-200": "hsl(var(--clr-brand-0) / <alpha-value>)",
     },
     fontSize: {
       00: "var(--fsf-00)",
