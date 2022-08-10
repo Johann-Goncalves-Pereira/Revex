@@ -1,0 +1,24 @@
+$color-var: "--clr";
+$empty: "empty";
+
+@function var($value, $parameter: $empty) {
+	$clr-length: str-length($color-var);
+
+	$var-color: str-slice($value, 0, $clr-length) == $color-var;
+	$var-prop: str-slice($value, 0, $clr-length) != $color-var;
+	$parameter-empty: $parameter == $empty;
+	$parameter-populated: $parameter != $empty;
+
+	@if $var-color and $parameter-empty {
+		@return unquote("hsl(var(#{$value}))");
+	}
+	@if $var-color and $parameter-populated {
+		@return unquote("hsl(var(#{$value}) / #{$parameter})");
+	}
+	@if $var-prop and $parameter-empty {
+		@return unquote("var(#{$value})");
+	}
+	@if $var-prop and $parameter-populated {
+		@return unquote("var(#{$value}, #{$parameter})");
+	}
+}
