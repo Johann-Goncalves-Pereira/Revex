@@ -1,7 +1,9 @@
-@use "../Abstracts/" as *;
+@use "/Abstracts" as *;
 
 @function hsl($h, $s, $l) {
 	@return unquote("#{$h} #{$s} #{$l}");
+	//? To hame color for colors
+	// @return unquote("hsl(#{$h} #{$s} #{$l})");
 }
 
 $colors: (
@@ -22,7 +24,7 @@ $colors: (
 );
 
 @mixin create-custom-prop($list) {
-	@each $type, $value in $colors {
+	@each $type, $value in $list {
 		@each $shade, $color in $value {
 			#{$color-var}-#{$type}-#{$shade}: #{$color};
 		}

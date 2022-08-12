@@ -1,23 +1,11 @@
-@mixin supports($property, $value, $support: false) {
-	@if $support {
-		@supports ($property: $value) {
-			@content;
-		}
-	} @else {
-		@supports (not ($property: $value)) {
-			@content;
-		}
-	}
-}
-
 @mixin supports-backdrop-filter($value, $support: false) {
 	@if $support {
 		@supports (backdrop-filter: $value) or (-webkit-background-filter: $value) {
 			@content;
 		}
 	}
-
-	@if $support == false {
+	//
+	@else {
 		@supports (not (backdrop-filter: $value)) or (-webkit-background-filter: $value) {
 			@content;
 		}
