@@ -6,6 +6,7 @@ module.exports = {
       "surface-1": "#101215",
       "surface-2": "#23282c",
       "surface-3": "#353c43",
+      text: "#fff",
     },
     extend: {},
   },
