@@ -18,11 +18,9 @@ module.exports = {
     "postcss-inline-svg": {},
     "postcss-jit-props": require("open-props"),
     "postcss-plugin": {},
-    "postcss-preset-env": {
-      /* https://github.com/csstools/postcss-plugins/tree/main/plugin-packs/postcss-preset-env */
-    },
     "postcss-pseudo-class-enter": {},
     "postcss-utilities": {},
+    "postcss-will-change": {},
     tailwindcss: {},
     "rucksack-css": {},
   },

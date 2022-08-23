@@ -1,9 +1,12 @@
+@use "/Abstracts" as *;
+
 .logo-ctnr {
 	&__title,
 	&__link {
 		$space-size: 1rem;
 
 		position: relative;
+
 		text-decoration: none;
 		text-align: center;
 
@@ -12,6 +15,7 @@
 		transition-property: transform;
 
 		&::before {
+			// content: "";
 			position: absolute;
 			bottom: calc(100% + $space-size);
 			left: 50%;
@@ -24,12 +28,17 @@
 			width: 13rem;
 			padding: 0.5rem 1rem;
 
-			background-color: var(--clr-surface-1);
+			background-color: var(--clr-surface-100, var(--alpha_, 0.25));
 
-			font-size: 0.875rem;
+			font-size: var(--fsf-01);
 			text-align: center;
 
 			animation: showUp 200ms var(--ease-elastic-5);
+			backdrop-filter: blur(1rem);
+
+			@include supports-backdrop-filter(blur(1rem)) {
+				--alpha_: 0.875;
+			}
 		}
 
 		&::after {
@@ -45,6 +54,7 @@
 			&::after {
 				content: "";
 			}
+
 			&::before {
 				content: attr(aria-label);
 
@@ -91,10 +101,6 @@
 
 		margin: auto;
 
-		// transition-duration: 100ms;
-
-		&:enter {
-		}
 		&::before {
 			--bc: var(--red-5);
 			width: max-content;

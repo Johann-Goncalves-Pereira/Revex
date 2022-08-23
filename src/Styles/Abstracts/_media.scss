@@ -1,0 +1,90 @@
+@use "sass:list" as list;
+
+$media: (
+	//? Mobile - sm = Small
+	5sm: 275px,
+	4sm: 360px,
+	3sm: 480px,
+	2sm: 576px,
+	//? Tablet - small / medium / large
+	sm: 640px,
+	md: 768px,
+	lg: 1024px,
+	//? Desktop - xl = Extra Large
+	xl: 1280px,
+	2xl: 1440px,
+	3xl: 1536px,
+	4xl: 1600px,
+	//? L-Desktop - uxl = Ultra Extra Large
+	uxl: 1920px,
+	2uxl: 2560px,
+	3uxl: 3200px
+);
+
+$above: above;
+$below: below;
+$between: between;
+
+@function getMediaPixel($item) {
+	@return list.nth($item, 2);
+}
+
+@mixin betweenMedia($breakpoint) {
+	$i: 0;
+	$length: list.length($media);
+
+	@while $i < ($length - 1) {
+		$i: $i + 1;
+
+		$item: list.nth($media, $i);
+		$next-item: list.nth($media, ($i + 1));
+
+		$item-px: getMediaPixel($item);
+		$next-item-px: getMediaPixel($next-item);
+
+		$item-name: list.nth($item, 1);
+
+		@if $breakpoint==$item-name {
+			@media (min-width: $item-px) and (max-width: $next-item-px) {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin typeMedia($type, $size) {
+	$type-above: $type == $above;
+	$type-below: $type == $below;
+
+	@if $type-above {
+		@media screen and (min-width: $size) {
+			@content;
+		}
+	}
+
+	@if $type-below {
+		@media screen and (max-width: $size) {
+			@content;
+		}
+	}
+}
+
+@mixin media($breakpoint, $type: $above) {
+	@if $type != $above and $type != $below and $type != $between {
+		@error "#{$type} isn't a media valid type, chose either #{$above}, #{$below} or #{$between}.";
+	}
+
+	@each $breakpoints, $size in $media {
+		@if $breakpoint == $breakpoints {
+			@include typeMedia($type, $size) {
+				@content;
+			}
+		}
+	}
+
+	@if $type == $between {
+		@include betweenMedia($breakpoint) {
+			@content;
+		}
+	}
+}

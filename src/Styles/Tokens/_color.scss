@@ -1,0 +1,36 @@
+@use "/Abstracts" as *;
+
+@function hsl($h, $s, $l) {
+	@return unquote("#{$h} #{$s} #{$l}");
+	//? To hame color for colors
+	// @return unquote("hsl(#{$h} #{$s} #{$l})");
+}
+
+$colors: (
+	surface: (
+		100: hsl(210, 11%, 5%),
+		200: hsl(210, 11%, 10%),
+		300: hsl(210, 11%, 15%),
+		400: hsl(210, 11%, 20%),
+		500: hsl(210, 11%, 50%),
+		600: hsl(210, 11%, 80%),
+		700: hsl(210, 11%, 85%),
+		800: hsl(210, 11%, 90%),
+		900: hsl(210, 11%, 95%),
+	),
+	brand: (
+		200: hsl(0, 100%, 71%),
+	),
+);
+
+@mixin create-custom-prop($list) {
+	@each $type, $value in $list {
+		@each $shade, $color in $value {
+			#{$color-var}-#{$type}-#{$shade}: #{$color};
+		}
+	}
+}
+
+:root {
+	@include create-custom-prop($colors);
+}
