@@ -1,14 +1,10 @@
 {
   "type": "application",
-  "source-directories": [
-    "src",
-    "src/App",
-    ".elm-spa/defaults",
-    ".elm-spa/generated"
-  ],
+  "source-directories": ["src", ".elm-spa/defaults", ".elm-spa/generated"],
   "elm-version": "0.19.1",
   "dependencies": {
     "direct": {
+      "NoRedInk/elm-json-decode-pipeline": "1.0.1",
       "elm/browser": "1.0.2",
       "elm/core": "1.0.5",
       "elm/html": "1.0.0",
