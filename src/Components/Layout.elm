@@ -1,4 +1,4 @@
-module Layout exposing (Model, initLayout, viewLayout)
+module Components.Layout exposing (Model, initLayout, viewLayout)
 
 import Array
 import Gen.Route as Route exposing (Route)

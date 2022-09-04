@@ -1,12 +1,12 @@
 module Pages.Home_ exposing (Model, Msg, page)
 
+import Components.Layout as Layout exposing (initLayout)
 import Components.Svg as SVG exposing (Logo(..))
 import Gen.Params.Home_ exposing (Params)
 import Gen.Route as Route
 import Html exposing (Html, a, div, h1, h2, h5, section, text)
 import Html.Attributes exposing (class, href, id, rel, tabindex, target)
 import Html.Attributes.Aria exposing (ariaLabel, ariaLabelledby)
-import Layout exposing (initLayout)
 import Page
 import Request
 import Shared
@@ -15,7 +15,7 @@ import View exposing (View)
 
 
 page : Shared.Model -> Request.With Params -> Page.With Model Msg
-page shared req =
+page _ _ =
     Page.sandbox
         { init = init
         , update = update
@@ -56,7 +56,7 @@ update msg model =
 
 
 view : Model -> View Msg
-view model =
+view _ =
     { title = "Revex - Home"
     , body =
         Layout.viewLayout

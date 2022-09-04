@@ -1,3 +1,5 @@
+type Elm = any;
+
 declare module "*.elm" {
-  export const Elm: any;
+  export const Elm: Elm;
 }
