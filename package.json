@@ -1,13 +1,15 @@
 {
   "name": "revex",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.3.2",
   "scripts": {
     "dev": "elm-spa gen && vite",
+    "color": "elm-spa gen && vite build --mode color",
     "build": "elm-spa gen && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/node": "^18.7.16",
     "@vitejs/plugin-legacy": "^2.0.0",
     "autoprefixer": "^10.4.7",
     "cssnano": "^5.1.12",
