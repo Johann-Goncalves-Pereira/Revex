@@ -16,10 +16,11 @@ import View exposing (View)
 
 page : Shared.Model -> Request.With Params -> Page.With Model Msg
 page _ _ =
-    Page.sandbox
+    Page.element
         { init = init
         , update = update
         , view = view
+        , subscriptions = \_ -> Sub.none
         }
 
 
@@ -31,9 +32,9 @@ type alias Model =
     {}
 
 
-init : Model
+init : ( Model, Cmd Msg )
 init =
-    {}
+    ( {}, Cmd.none )
 
 
 
@@ -41,14 +42,14 @@ init =
 
 
 type Msg
-    = ReplaceMe
+    = NoOp
 
 
-update : Msg -> Model -> Model
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        ReplaceMe ->
-            model
+        NoOp ->
+            ( model, Cmd.none )
 
 
 
