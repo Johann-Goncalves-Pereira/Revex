@@ -106,12 +106,12 @@ viewLayout model =
             class <| "root__main main--" ++ classBuilder (routeName model.route)
     in
     [ div
-        [ id "root"
-        , placeholderStyles 0
-        , classList
+        [ classList
             [ ( "root", True )
             , ( "root--" ++ classBuilder (routeName model.route), True )
             ]
+        , id "root"
+        , placeholderStyles 0
         ]
         [ viewHeader model
         , main_ (mainClass :: model.mainAttrs) model.mainContent
@@ -123,10 +123,7 @@ viewHeader : Model msg -> Html msg
 viewHeader model =
     header [ class "root__header" ]
         [ viewHeaderLinks model [ Route.Home_, Route.About ]
-            |> nav
-                [ class "root__header__nav"
-                , placeholderStyles 1
-                ]
+            |> nav [ class "root__header__nav", placeholderStyles 1 ]
         ]
 
 
