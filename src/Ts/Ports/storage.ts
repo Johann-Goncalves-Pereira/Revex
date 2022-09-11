@@ -1,8 +1,6 @@
 //? Port To get Storage
 
-export const StorageFlag: JSON = JSON.parse(
-  localStorage.getItem("storage") || ""
-);
+export const StorageFlag: JSON = JSON.parse(localStorage.getItem("storage"));
 
 export function Storage(app: Elm) {
   try {
