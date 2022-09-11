@@ -1,11 +1,13 @@
-//? Port To get Storage
+const localName = "storage";
 
-export const StorageFlag: JSON = JSON.parse(localStorage.getItem("storage"));
+// @ts-ignore
+export const StorageFlag: JSON = JSON.parse(localStorage.getItem(localName));
 
 export function Storage(app: Elm) {
   try {
     app.ports.save.subscribe((storage: JSON) => {
-      localStorage.setItem("storage", JSON.stringify(storage));
+      localStorage.setItem(localName, JSON.stringify(storage));
+
       app.ports.load.send(storage);
     });
   } catch (err) {
