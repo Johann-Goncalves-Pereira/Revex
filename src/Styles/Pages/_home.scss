@@ -3,8 +3,6 @@
 .logo-ctnr {
 	&__title,
 	&__link {
-		$space-size: var(--spacing);
-
 		position: relative;
 
 		text-decoration: none;
@@ -17,7 +15,7 @@
 		&::before {
 			// content: "";
 			position: absolute;
-			bottom: calc(100% + $space-size);
+			bottom: calc(100% + var(--spacing-4));
 			left: 50%;
 
 			transform: translateX(-50%) translateY(0);
@@ -45,7 +43,7 @@
 			position: absolute;
 			inset-inline: 0;
 			bottom: calc(100% - 0.125em);
-			height: $space-size * 1.125;
+			height: calc(var(--spacing-4) * 1.125);
 		}
 
 		&:enter {
