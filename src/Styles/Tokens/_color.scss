@@ -1,47 +1,43 @@
 @use "/Abstracts" as *;
 
-@function hsl($h, $s, $l) {
-	@if $env == "color" {
-		@return unquote("hsl(#{$h} #{$s} #{$l})");
-	} //
-	@else {
-		@return unquote("#{$h} #{$s} #{$l}");
+$schema: map-get($theme, schema);
+$dark-colors: map-get($theme, colors);
+$light-colors: map-get($theme, light_colors);
+
+@function hsl-str($color) {
+	@if ($env == "color") {
+		@return unquote(
+			"hsl(#{hue($color)}, #{saturation($color)}, #{lightness($color)})"
+		);
 	}
+	@return unquote(
+		"#{hue($color)}, #{saturation($color)}, #{lightness($color)}"
+	);
 }
-
-$colors: (
-	surface: (
-		100: hsl(210, 18%, 7%),
-		200: hsl(210, 18%, 12%),
-		300: hsl(210, 18%, 18%),
-		400: hsl(210, 18%, 22%),
-		500: hsl(210, 18%, 50%),
-		600: hsl(210, 18%, 80%),
-		700: hsl(210, 18%, 85%),
-		800: hsl(210, 18%, 90%),
-		900: hsl(210, 18%, 95%),
-	),
-	brand: (
-		100: hsl(0, 100%, 10%),
-		200: hsl(0, 100%, 20%),
-		300: hsl(0, 100%, 30%),
-		400: hsl(0, 100%, 40%),
-		500: hsl(0, 100%, 50%),
-		600: hsl(0, 100%, 60%),
-		700: hsl(0, 100%, 70%),
-		800: hsl(0, 100%, 80%),
-		900: hsl(0, 100%, 90%),
-	),
-);
-
 @mixin create-custom-prop($list) {
 	@each $type, $value in $list {
 		@each $shade, $color in $value {
-			#{$color-var}-#{$type}-#{$shade}: #{$color};
+			#{$color-var}-#{$type}-#{$shade}: #{hsl-str($color)};
 		}
 	}
 }
 
-:root {
-	@include create-custom-prop($colors);
+@media (--schema-dark) {
+	:root {
+		/* Dark colors */
+		@include create-custom-prop($dark-colors);
+	}
 }
+// .root--dark {
+// 	@include create-custom-prop($dark-colors);
+// }
+
+@media (--schema-light) {
+	:root {
+		/* Light colors */
+		@include create-custom-prop($light-colors);
+	}
+}
+// .root--light {
+// 	@include create-custom-prop($light-colors);
+// }

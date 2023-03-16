@@ -72,7 +72,7 @@ view _ =
 viewPlaceholder : List (Html msg)
 viewPlaceholder =
     [ h1
-        [ class "text-center text-2"
+        [ class "text-center text-2 bg-surface-100"
         , id "placeholder"
         ]
         [ a
@@ -108,7 +108,6 @@ viewPlaceholder =
                 , { svg = SVG.logo SVG.ElmSpa, link = "https://www.elm-spa.dev", desc = "Automatically generated a single page application for elm.", name = "Elm Spa" }
                 , { svg = SVG.logo SVG.PostCss, link = "https://postcss.org", desc = "A tool for transforming CSS with JavaScript.", name = "PostCss" }
                 , { svg = SVG.logo SVG.Tailwind, link = "https://tailwindcss.com", desc = "Rapidly build modern websites without ever leaving your HTML.", name = "Tailwind" }
-                , { svg = SVG.logo SVG.OpenProps, link = "https://open-props.style", desc = "Supercharged CSS variables.", name = "Open Props" }
                 , { svg = SVG.logo SVG.Sass, link = "https://sass-lang.com", desc = "Sass is a preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets.", name = "Sass" }
                 , { svg = SVG.logo SVG.Vite, link = "https://vitejs.dev", desc = "Next Generation Frontend Tooling. Base of this project.", name = "Vite" }
                 , { svg = SVG.logo SVG.EsBuild, link = "https://esbuild.github.io", desc = "An extremely fast JavaScript bundler.", name = "EsBuild" }

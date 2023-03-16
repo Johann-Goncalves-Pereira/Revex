@@ -13,7 +13,7 @@ Features and tools:
 - Style
   - [X] [Sass](https://sass-lang.com)
   - [X] [PostCss](https://postcss.org) ++ _Plugins_
-  - [X] [Open-Props](https://open-props.style)
+  - [ ] [Open-Props](https://open-props.style)
   - [X] [Tailwind](https://tailwindcss.com)
 - Formatting
   - [X] [EditorConfig](https://editorconfig.org)

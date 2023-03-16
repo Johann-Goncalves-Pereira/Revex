@@ -3,14 +3,14 @@
 .logo-ctnr {
 	&__title,
 	&__link {
-		$space-size: 1rem;
+		$space-size: var(--spacing);
 
 		position: relative;
 
 		text-decoration: none;
 		text-align: center;
 
-		transition: 150ms var(--ease-elastic-3);
+		transition: 150ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 		transition-delay: 100ms;
 		transition-property: transform;
 
