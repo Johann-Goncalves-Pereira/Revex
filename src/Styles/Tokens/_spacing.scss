@@ -1,0 +1,10 @@
+@use "/Abstracts" as *;
+
+$spacing: map-get($theme, spacing);
+
+:root {
+	@each $t, $size in $spacing {
+		$type: str-replace("#{$t}", ".5", "\\.5");
+		--spacing-#{$type}: #{$size};
+	}
+}

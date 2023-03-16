@@ -1,44 +1,37 @@
-module.exports = {
-  plugins: {
-    doiuse: {},
-    cssnano: {
+import autoprefixer from "autoprefixer";
+import cssnano from "cssnano";
+
+import postcssCustomMedia from "postcss-custom-media";
+import postcssCustomProperties from "postcss-custom-properties";
+import postcssInlineSvg from "postcss-inline-svg";
+import postcssPresetEnv from "postcss-preset-env";
+
+import tailwind from "tailwindcss";
+import tailwindConfig from "./tailwind.config.js";
+import tailwindNesting from "tailwindcss/nesting";
+
+export default {
+  plugins: [
+    autoprefixer,
+    tailwind(tailwindConfig),
+    tailwindNesting,
+    cssnano({
       preset: [
-        "advanced",
-        process.env.NODE_ENV === "production"
-          ? { cssDeclarationSorter: false }
-          : {
-              cssDeclarationSorter: false,
-              convertValues: false,
-              reduceIdents: false,
-            },
+        "default",
+        {
+          cssDeclarationSorter: false,
+          reduceIdents: false,
+        },
       ],
-    },
-    "postcss-custom-media": {},
-    "postcss-custom-selectors": {},
-    "postcss-inline-svg": {},
-    "postcss-jit-props": require("open-props"),
-    "postcss-plugin": {},
-    "postcss-pseudo-class-enter": {},
-    "postcss-utilities": {},
-    "postcss-will-change": {},
-    tailwindcss: {},
-    "rucksack-css": {},
-  },
+    }),
+    postcssCustomMedia,
+    postcssCustomProperties,
+    postcssInlineSvg,
+    postcssPresetEnv({
+      precalculate: false,
+      features: {
+        "logical-properties-and-values": false,
+      },
+    }),
+  ],
 };
-
-//* Instructions
-//& DoIUse Config
-// doiuse: { browsers: ["ie >= 8", "> 1%"],}
-
-//& Open-Props Config
-// 'postcss-jit-props': require('open-props'),
-//*  or
-// 'postcss-jit-props': {
-//   files: [require.resolve('open-props/style'),require.resolve('open-props/normalize')],
-// },
-
-//& CssNano
-// colormin: false,
-
-//& Autoprefixer
-// autoprefixer: {},

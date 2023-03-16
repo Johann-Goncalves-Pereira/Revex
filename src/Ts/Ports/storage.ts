@@ -1,3 +1,5 @@
+// import theme from "../../Styles/Abstracts/theme.module.scss";
+
 const localName = "storage";
 
 // @ts-ignore
@@ -14,3 +16,6 @@ export function Storage(app: Elm) {
     console.log(err);
   }
 }
+
+// const themeJson = JSON.stringify(theme);
+// localStorage.setItem("theme", themeJson);

@@ -1,0 +1,45 @@
+@use "/Abstracts" as *;
+
+$breakpoints: map-get($theme, screens);
+
+// ? Reference: https://github.com/argyleink/open-props/blob/main/src/props.media.css
+@custom-media --normal-motion (prefers-reduced-motion: no-preference);
+@custom-media --reduced-motion (prefers-reduced-motion: reduce);
+@custom-media --normal-transparency (prefers-reduced-transparency: no-preference);
+@custom-media --reduced-transparency (prefers-reduced-transparency: reduce);
+@custom-media --normal-data (prefers-reduced-data: no-preference);
+@custom-media --reduce-data (prefers-reduced-data: reduce);
+
+@custom-media --schema-dark (prefers-color-scheme: dark);
+@custom-media --schema-light (prefers-color-scheme: light);
+
+@custom-media --high-contrast (prefers-contrast: more);
+@custom-media --low-contrast (prefers-contrast: less);
+
+@custom-media --portrait (orientation: portrait);
+@custom-media --landscape (orientation: landscape);
+
+@custom-media --hd-color (dynamic-range: high);
+
+@custom-media --touch (hover: none) and (pointer: coarse);
+@custom-media --stylus (hover: none) and (pointer: fine);
+@custom-media --pointer (hover) and (pointer: coarse);
+@custom-media --mouse (hover) and (pointer: fine);
+
+@each $name, $size in $breakpoints {
+	$prev-key: max(1, index(map-keys($breakpoints), $name) - 1);
+	$prev-item: nth(map-keys($breakpoints), $prev-key);
+	$prev-get: map-get($breakpoints, $prev-item);
+
+	$prev: if($prev-get == map-get($breakpoints, $name), 0, $prev-get);
+
+	// @debug "--#{$name}-only(#{$prev} <= width <= #{map-get($breakpoints, $name)})";
+	// @debug "--#{$name}-above(width >= #{map-get($breakpoints, $name)})";
+	// @debug "--#{$name}-below (width < #{map-get($breakpoints, $name)})";
+	// @debug "--#{$name}-phone(--#{$name}-only) and (--portrait)";
+
+	@custom-media --#{$name}-only (#{$prev} <= width <= #{map-get($breakpoints, $name)});
+	@custom-media --#{$name}-above (width >= #{map-get($breakpoints, $name)});
+	@custom-media --#{$name}-below (width < #{map-get($breakpoints, $name)});
+	@custom-media --#{$name}-phone (--#{$name}-only) and (--portrait);
+}

@@ -1,10 +1,10 @@
 import { Elm } from "../Main.elm";
 import { Storage, StorageFlag } from "./Ports/storage";
 
-import "./Load/loadStyles.ts";
+import "./Load/loadStyles";
 
 //? Initialize our Elm app
-const RootNode = document.querySelector("#root");
+export const RootNode = document.querySelector("#root");
 
 const app: Elm = Elm.Main.init({
   node: RootNode,
