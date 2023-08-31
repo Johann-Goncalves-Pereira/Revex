@@ -1,0 +1,14 @@
+version: '2.18'
+services:
+  boilerplate:
+    build:
+      context: ../../../
+      dockerfile: ./docker/package/local/Dockerfile
+      # args:
+        # BASE_API_URL: ""
+    restart: always
+    platform: linux/amd64
+    volumes:
+      - "../../../:/app/run"
+    ports:
+      - "5123:5123"

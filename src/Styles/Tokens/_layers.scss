@@ -1,9 +1,0 @@
-@use "/Abstracts" as *;
-
-$z-index: map-get($theme, z_index);
-
-:root {
-	@each $type, $size in $z-index {
-		--z-index-#{$type}: #{$size};
-	}
-}
