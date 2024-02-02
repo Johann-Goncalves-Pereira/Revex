@@ -30,7 +30,7 @@
     "terser": "^5.19.3",
     "ts-reset": "^0.0.1",
     "typescript": "^5.2.2",
-    "vite": "^4.4.12",
+    "vite": "^4.5.2",
     "vite-plugin-elm": "^2.8.0"
   }
 }
